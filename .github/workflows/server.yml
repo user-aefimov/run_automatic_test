@@ -35,6 +35,7 @@ jobs:
         run: sudo apt-get install google-chrome-stable
       - name: install dependencies
         run: pip install -r requirements.txt
+        run: pip install webdriver-manager  # добавить эту строку
       - name: first_test
         if: "github.event.inputs.deployment_target == 'first_test'"
         run: pytest tests/test_button.py::test_button_exist --alluredir=allure-results
